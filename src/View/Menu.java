@@ -10,6 +10,8 @@ import Control.ListaUsuarios;
 import Model.Cardapio;
 import Model.Pontuacao;
 import Model.Produtos;
+import Model.SituacaoUsuario;
+import Model.SituacaoUsuarioState;
 import Model.TipoPagamento;
 import Model.Usuario;
 
@@ -68,7 +70,11 @@ public class Menu {
 
 	public static Usuario cadastrar() throws FileNotFoundException, IOException, ClassNotFoundException {
 
+		SituacaoUsuarioState su = new SituacaoUsuario();
 		listaUsuarios.adicionarUsuario();
+
+		// Padrão State
+		su.clienteValidado(usuario);
 
 		return usuario;
 
@@ -93,7 +99,7 @@ public class Menu {
 
 			case 2:
 				double somaPontuacao = usuario.totalPontos();
-				//System.out.println(somaPontuacao);
+				// System.out.println(somaPontuacao);
 				compras.classificacao(somaPontuacao);
 				compras.beneficios(somaPontuacao);
 				menuUsuario();
