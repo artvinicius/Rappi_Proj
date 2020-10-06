@@ -92,9 +92,10 @@ public class Menu {
 				break;
 
 			case 2:
-				double teste = usuario.totalPontos();
-				System.out.println(teste);
-				compras.classificacao(teste);
+				double somaPontuacao = usuario.totalPontos();
+				//System.out.println(somaPontuacao);
+				compras.classificacao(somaPontuacao);
+				compras.beneficios(somaPontuacao);
 				menuUsuario();
 
 			case 0:
