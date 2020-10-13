@@ -24,6 +24,7 @@ public class Usuario {
 
 	public Usuario() {
 	}
+	// Method FACADE
 
 	public static synchronized Usuario getInstance() {
 		if (uniqueInstance == null)

@@ -9,8 +9,6 @@ public class Cardapio {
 
 	public Cardapio() {
 
-		// PODE CRIAR UM PADRÃO AQUI
-
 		produto.add(new Produtos(1, "Refrigerante Coca-Cola 300ml", 5.0));
 		produto.add(new Produtos(2, "Refrigerante Fanta 300ml", 4.50));
 		produto.add(new Produtos(3, "Refrigerante Antartica 300ml", 4.50));
