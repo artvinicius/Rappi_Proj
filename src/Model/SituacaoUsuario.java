@@ -1,8 +1,6 @@
 package Model;
 
-public class SituacaoUsuario implements SituacaoUsuarioState {
-
-	// Padrão State
+public class SituacaoUsuario  implements SituacaoUsuarioState {
 
 	@Override
 	public void clienteValidado(Usuario usuario) {

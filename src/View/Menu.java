@@ -2,6 +2,7 @@ package View;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.ObjectInputStream.GetField;
 import java.util.Scanner;
 
 import Control.Compras;
@@ -76,19 +77,25 @@ public class Menu {
 		// Padrão State
 		su.clienteValidado(usuario);
 
+		System.out.println(usuario.getNome());
 		return usuario;
+
+	}
+
+	public static void logadoStatus() {
 
 	}
 
 	public static void menuUsuario() throws FileNotFoundException, ClassNotFoundException, IOException {
 
+		Usuario user = new Usuario();
+
 		int value;
 		boolean resultado = false;
 
 		while (!resultado) {
-
 			System.out.println("------------------------ MENU ------------------------");
-			System.out.println("\n1- Realizar Compra\n2- Consultar Pontuação\n0- Encerrar Sessão");
+			System.out.println("\n1- Realizar Compra\n2- Consultar Pontuação\n3- Exibir histórico\n0- Encerrar Sessão");
 			System.out.print("Digite uma opção: ");
 			value = entrada.nextInt();
 
@@ -103,6 +110,8 @@ public class Menu {
 				compras.classificacao(somaPontuacao);
 				compras.beneficios(somaPontuacao);
 				menuUsuario();
+//			case 3:
+//				historicoCompras();
 
 			case 0:
 				sairDoSistema();
@@ -175,4 +184,14 @@ public class Menu {
 		return pontos.pontos(forma, valor);
 
 	}
+
+//
+//	public static Usuario historicoCompras() {
+//
+//		System.out.println("Usuário:" + usuario.getNome() + "Identificação:" + usuario.getCodIdentificador() 
+//		+ "\nPontuação: " + usuario.getPontuacao() + "\nPedido: " + "" + "\nForma do Pagamento: " + pagamento());
+//		
+//		return historicoCompras();
+//	}
+
 }

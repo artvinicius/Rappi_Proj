@@ -12,6 +12,7 @@ public class Usuario {
 	private String codIdentificador;
 	private double pontuacao;
 	private static Usuario uniqueInstance;
+	private String estado;
 	double total = 0;
 
 	private List<Double> pontos = new ArrayList<Double>();
@@ -40,6 +41,23 @@ public class Usuario {
 		}
 		return total;
 
+	}
+
+	// Padrão State
+
+	public void Sistema() {
+		this.estado = "DESLOGADO";
+	}
+
+	public void status(String estado, String nome) {
+
+		if (estado.equals("DESLOGADO")) {
+			this.setEstado(estado);
+			this.setEstado("LOGADO");
+
+			System.out.println(nome + " está " + getEstado());
+			
+		}
 	}
 
 	public String getNome() {
@@ -74,9 +92,17 @@ public class Usuario {
 		this.pontos = pontos;
 	}
 
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
 	@Override
 	public String toString() {
-		return "Código do Usuário: " + this.codIdentificador + " | Nome: " + this.nome;
+		return "Código do Usuário: " + getCodIdentificador() + " | Nome: " + getNome();
 	}
 
 }
