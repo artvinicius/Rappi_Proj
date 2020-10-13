@@ -1,20 +1,28 @@
 package Model;
 
-public class SituacaoUsuario  implements SituacaoUsuarioState {
+public class SituacaoUsuario extends Usuario implements SituacaoUsuarioState {
 
 	@Override
-	public void clienteValidado(Usuario usuario) {
+	public void clienteLogado(Usuario usuario) {
 
-		if (usuario != null)
-
-			System.out.println("Cadastro Válidado com Sucesso!");
+		if (usuario != null) {
+			if (usuario.getEstado().equals("DESLOGADO")) {
+				this.setEstado(getEstado());
+				this.setEstado("LOGADO");
+				System.out.println("");
+				System.out.println(usuario.getNome() + " esta " + getEstado());
+			}
+		}
 
 	}
 
 	@Override
-	public void clienteInvalidado(Usuario usuario) {
-		if (usuario == null)
-
-			System.out.println("Cadastro Inválido!");
+	public void clienteDeslogado(Usuario usuario) {
+		if (usuario != null)
+			if (usuario.getEstado().equals("LOGADO")) {
+				this.setEstado(getEstado());
+				this.setEstado("DESLOGADO");
+				System.out.println(usuario.getNome() + " esta " + getEstado());
+			}
 	}
 }

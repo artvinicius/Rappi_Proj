@@ -32,12 +32,12 @@ public class ListaUsuarios {
 
 		ListaUsuarios listaUsuarios = new ListaUsuarios();
 		Usuario usuario = new Usuario();
-		System.out.println("\nDigite seu nome:");
+		System.out.print("Digite seu nome: ");
 		usuario.setNome(entrada.next());
-		System.out.println("Digite seu codigo de identificação:");
+		System.out.print("Digite seu codigo de identificacao: ");
 		usuario.setCodIdentificador(entrada.next());
 
-		System.out.println("\nUsuário cadastrado com sucesso!");
+		System.out.println("\nUsuario cadastrado com sucesso!");
 		System.out.println(usuario.toString());
 		listaUsuarios.salvarCadastro(usuario);
 

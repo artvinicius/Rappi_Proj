@@ -2,9 +2,9 @@ package Model;
 
 public interface SituacaoUsuarioState {
 
-	//Padrão State
+	//Padrao State
 
-		public void clienteInvalidado(Usuario usuario);
-		public void clienteValidado(Usuario usuario);
+		public void clienteLogado(Usuario usuario);
+		public void clienteDeslogado(Usuario usuario);
 
 }

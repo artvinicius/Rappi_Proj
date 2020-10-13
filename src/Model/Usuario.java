@@ -17,12 +17,13 @@ public class Usuario {
 
 	private List<Double> pontos = new ArrayList<Double>();
 
-	public Usuario(String nome, String codIdentificador) {
+	public Usuario(String nome, String codIdentificador, String estado) {
 		this.nome = nome;
 		this.codIdentificador = codIdentificador;
+		this.estado = "DESLOGADO";
 
 	}
-
+	
 	public Usuario() {
 	}
 	// Method FACADE
@@ -43,7 +44,7 @@ public class Usuario {
 
 	}
 
-	// Padrão State
+	// Padrao State
 
 	public void Sistema() {
 		this.estado = "DESLOGADO";
@@ -55,7 +56,7 @@ public class Usuario {
 			this.setEstado(estado);
 			this.setEstado("LOGADO");
 
-			System.out.println(nome + " está " + getEstado());
+			System.out.println(nome + " esta " + getEstado());
 			
 		}
 	}
@@ -102,7 +103,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Código do Usuário: " + getCodIdentificador() + " | Nome: " + getNome();
+		return "Codigo do Usuario: " + getCodIdentificador() + " | Nome: " + getNome();
 	}
 
 }
